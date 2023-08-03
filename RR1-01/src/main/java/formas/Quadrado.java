@@ -2,8 +2,8 @@ package formas;
 
 public class Quadrado extends Retangulo{
 
-  public Quadrado(double altura, double base) {
-    super(altura, base);
+  public Quadrado(double lado) {
+    super(lado, lado);
   }
 
   public double area(){
