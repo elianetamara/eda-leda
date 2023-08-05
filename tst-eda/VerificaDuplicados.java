@@ -10,7 +10,7 @@ class VerificaDuplicados {
 
   public static boolean verificacao(String[] numeros){
     for (int i = 0; i < numeros.length; i++) {
-      for (int j = i+1; j < numeros.length-1; j++) {
+      for (int j = i+1; j < numeros.length; j++) {
         if(Integer.valueOf(numeros[i]) == Integer.valueOf(numeros[j])){
           return true;
         }
