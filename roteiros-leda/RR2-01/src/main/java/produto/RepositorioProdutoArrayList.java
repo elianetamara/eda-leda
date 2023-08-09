@@ -11,7 +11,7 @@ import java.util.ArrayList;
  *
  * @author Adalberto
  */
-public class RepositorioProdutoArrayList implements IRepositorioProdutos {
+public class RepositorioProdutoArrayList implements IRepositorioProdutos<Produto> {
 
 	/**
 	 * A estrutura onde os produtos sao mantidos. Voce nao precisa se preocupar

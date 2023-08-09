@@ -1,12 +1,12 @@
 package produto;
 
-public class RepositorioProdutoArray implements IRepositorioProdutos{
+public class RepositorioProdutoArray<T extends Produto> implements IRepositorioProdutos<T>{
 
-  private Produto[] produtos;
+  private T[] produtos;
   private int index = -1;
 
 	public RepositorioProdutoArray(int size) {
-		this.produtos = new Produto[size];
+		this.produtos = (T[]) new Object[size];
 	}
 
   private int procurarIndice(int codigo) {
@@ -29,13 +29,13 @@ public class RepositorioProdutoArray implements IRepositorioProdutos{
   }
 
   @Override
-  public void inserir(Produto produto) {
+  public void inserir(T produto) {
     index = index+1;
     produtos[index] = produto;
   }
 
   @Override
-  public void atualizar(Produto produto) {
+  public void atualizar(T produto) {
     int i = this.procurarIndice(produto.getCodigo());
     if(i != -1) {
       produtos[i] = produto;
@@ -57,7 +57,7 @@ public class RepositorioProdutoArray implements IRepositorioProdutos{
   }
 
   @Override
-  public Produto procurar(int codigo) {
+  public T procurar(int codigo) {
     int i = this.procurarIndice(codigo);
     if(i != -1){
       return produtos[i];
