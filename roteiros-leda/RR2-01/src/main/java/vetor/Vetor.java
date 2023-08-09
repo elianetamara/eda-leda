@@ -9,10 +9,10 @@ import java.util.Comparator;
  * @author Adalberto
  *
  */
-public class Vetor {
+public class Vetor<T extends Comparable<T>> {
 
 	// O array interno onde os objetos manipulados são guardados
-	private Object[] arrayInterno;
+	private T[] arrayInterno;
 
 	// O tamanho que o array interno terá
 	private int tamanho;
@@ -21,51 +21,64 @@ public class Vetor {
 	private int indice;
 
 	// O Comparators a serem utilizados
-	private Comparator comparadorMaximo;
-	private Comparator comparadorMinimo;
+	private Comparator<T> comparadorMaximo;
+	private Comparator<T> comparadorMinimo;
 
 	public Vetor(int tamanho) {
 		super();
 		this.tamanho = tamanho;
 		this.indice = -1;
+		this.arrayInterno = (T[]) new Comparable[tamanho];
 	}
 
-	public void setComparadorMaximo(Comparator comparadorMaximo) {
+	public void setComparadorMaximo(Comparator<T> comparadorMaximo) {
 		this.comparadorMaximo = comparadorMaximo;
 	}
 
-	public void setComparadorMinimo(Comparator comparadorMinimo) {
+	public void setComparadorMinimo(Comparator<T> comparadorMinimo) {
 		this.comparadorMinimo = comparadorMinimo;
 	}
 
 	// Insere um objeto no vetor
-	public void inserir(Object o) {
-		// TODO Remove the exception and implement your code
-		throw new UnsupportedOperationException("Not implemented yet!");
+	public void inserir(T o) {
+		indice = indice+1;
+		this.arrayInterno[indice] = o;
 	}
 
 	// Remove um objeto do vetor
-	public Object remover(Object o) {
-		// TODO Remove the exception and implement your code
-		throw new UnsupportedOperationException("Not implemented yet!");
+	public T remover(T o) {
+		T out = null;
+    for (int i = 0; i < arrayInterno.length; i++) {
+      if (arrayInterno[i].equals(o)) {
+        out = arrayInterno[i];
+        arrayInterno[i] = arrayInterno[indice];
+        arrayInterno[indice] = null; 
+        indice = indice-1;;
+      }
+    } 
+    return out;
 	}
 
 	// Procura um elemento no vetor
-	public Object procurar(Object o) {
-		// TODO Remove the exception and implement your code
-		throw new UnsupportedOperationException("Not implemented yet!");
+	public T procurar(T o) {
+		T out = null;
+		for (int i = 0; i < arrayInterno.length; i++) {
+			if(arrayInterno[i].equals(o)){
+				out = arrayInterno[i];
+				break;
+			}
+		}
+		return out;
 	}
 
 	// Diz se o vetor está vazio
 	public boolean isVazio() {
-		// TODO Remove the exception and implement your code
-		throw new UnsupportedOperationException("Not implemented yet!");
+		return this.indice == -1;
 	}
 
 	// Diz se o vetor está cheio
 	public boolean isCheio() {
-		// TODO Remove the exception and implement your code
-		throw new UnsupportedOperationException("Not implemented yet!");
+		return indice == arrayInterno.length - 1;
 	}
 
 }
