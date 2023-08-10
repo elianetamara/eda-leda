@@ -19,11 +19,9 @@ class InsereUltimo{
     return retorno;
   }
 
-  // verificar
   public static void insereUltimo(int[] numeros){
-    for (int i = 1; i < numeros.length; i++) { 
 		
-      int j = i;
+      int j = numeros.length-1;
     
       while (j > 0 && numeros[j] < numeros[j-1]) {
         int aux = numeros[j];
@@ -32,6 +30,6 @@ class InsereUltimo{
         j -= 1;
       }
     
-    }	
+    
   }
 }
