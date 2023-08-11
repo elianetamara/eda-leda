@@ -1,7 +1,5 @@
 package sorting.variationsOfSelectionsort;
 
-import java.util.Arrays;
-
 import sorting.AbstractSorting;
 import util.Util;
 
