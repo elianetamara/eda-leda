@@ -1,5 +1,7 @@
 package sorting.simpleSorting;
 
+import java.util.Arrays;
+
 import sorting.AbstractSorting;
 import util.Util;
 
@@ -12,7 +14,7 @@ public class SelectionSort<T extends Comparable<T>> extends AbstractSorting<T> {
 
 	@Override
 	public void sort(T[] array, int leftIndex, int rightIndex) {
-		if(array.length > 0){
+		if(array.length > 0  && rightIndex <= array.length-1 && leftIndex >= 0){
 			for (int i = leftIndex; i <= rightIndex; i++) {
 				int menor_index = i;
 				for (int j = i+1; j <= rightIndex; j++) {
@@ -24,4 +26,12 @@ public class SelectionSort<T extends Comparable<T>> extends AbstractSorting<T> {
 		}
 		}
 	}
+
+	public static void main(String[] args){
+        Integer[] array = new Integer[]{6, 1, 5, 3, 8, 13, 9};
+        SelectionSort<Integer> selectionSort = new SelectionSort<>();
+        selectionSort.sort(array, 0, 5);
+        System.out.println(Arrays.toString(array));
+
+    }
 }
