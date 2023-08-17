@@ -7,7 +7,7 @@ class SelectionRecursivo {
     Scanner sc = new Scanner(System.in);
     int[] numeros = transformaLista(sc.nextLine().split(" "));
     selectionSortRecursivo(numeros, 0, numeros.length-1);
-    System.out.println(Arrays.toString(numeros));
+    //System.out.println(Arrays.toString(numeros));
 
   }
 
@@ -37,21 +37,5 @@ class SelectionRecursivo {
     }
     return retorno;
   }
-
-  /*
-   * if(numeros.length > 0){
-			int menor_index = i;
-		for (int j = menor_index+1; j <= n; j++) {
-			if(numeros[j].compareTo(numeros[menor_index]) < 0){
-				menor_index = j;
-			}
-		}
-		Util.swap(numeros, menor_index, i);
-		if(i +1 < n){
-			sort(numeros, i+1, n);
-		}
-		}
-	}
-   */
   
 }
