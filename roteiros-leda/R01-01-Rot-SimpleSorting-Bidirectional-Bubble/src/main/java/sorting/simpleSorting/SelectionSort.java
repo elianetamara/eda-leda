@@ -1,7 +1,5 @@
 package sorting.simpleSorting;
 
-import java.util.Arrays;
-
 import sorting.AbstractSorting;
 import util.Util;
 
@@ -14,24 +12,24 @@ public class SelectionSort<T extends Comparable<T>> extends AbstractSorting<T> {
 
 	@Override
 	public void sort(T[] array, int leftIndex, int rightIndex) {
-		if(array.length > 0  && rightIndex <= array.length-1 && leftIndex >= 0){
+		boolean checkParameters = array.length > 0 && rightIndex <= array.length-1 && leftIndex >= 0;
+		
+		if(checkParameters){
 			for (int i = leftIndex; i <= rightIndex; i++) {
-				int menor_index = i;
-				for (int j = i+1; j <= rightIndex; j++) {
-					if(array[j].compareTo(array[menor_index]) < 0){
-						menor_index = j;
-					}
-				}
-			Util.swap(array, i, menor_index);
-		}
+				int smallestIndex = findSmallest(array, i, rightIndex);
+				Util.swap(array, i, smallestIndex);
+			}
 		}
 	}
 
-	public static void main(String[] args){
-        Integer[] array = new Integer[]{6, 1, 5, 3, 8, 13, 9};
-        SelectionSort<Integer> selectionSort = new SelectionSort<>();
-        selectionSort.sort(array, 0, 5);
-        System.out.println(Arrays.toString(array));
+	private int findSmallest(T[] array, int i, int rightIndex){
+		int smallest = i;
+		for (int j = i+1; j <= rightIndex; j++) {
+			if(array[j].compareTo(array[smallest]) < 0){
+				smallest = j;
+			}
+		}
+		return smallest;
+	}
 
-    }
 }
