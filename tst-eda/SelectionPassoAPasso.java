@@ -11,34 +11,31 @@ class SelectionPassoAPasso {
 
   private static void selectionSort(int[] numeros, int i, int n) {
       for (int j = i; j <= n; j++) {   
-        int menor_index = j;
+        boolean troca = false;
+        int menor = j;
         for (int k = j + 1; k <= n; k++) {
-          if (numeros[k] < numeros[menor_index]) {
-            menor_index = k;
+          if (numeros[k] < numeros[menor]) {
+            menor = k;
+            troca = true;
           }
         }
-        int aux = numeros[menor_index];
-        numeros[menor_index] = numeros[j];
-        numeros[j] = aux;
-        System.out.println(Arrays.toString(numeros)); 
-        if(verificaOrdenacao(numeros))  {break;}
+        swap(numeros, menor, j);
+        if(troca) {System.out.println(Arrays.toString(numeros)); }
       }
     }
 
-  public static int[] transformaLista(String[] lista){
+  private static int[] transformaLista(String[] lista){
     int[] retorno = new int[lista.length];
     for (int i = 0; i < retorno.length; i++) {
       retorno[i] = Integer.parseInt(lista[i]);
     }
     return retorno;
   }
-  
-  public static boolean verificaOrdenacao(int[] lista){
-    for (int i = 0; i < lista.length-1; i++) {
-      if(lista[i] > lista[i+1]){
-        return false;
-      }
-    }
-    return true;
+
+  private static void swap(int[] numeros, int menor_index, int j){
+    int aux = numeros[menor_index];
+    numeros[menor_index] = numeros[j];
+    numeros[j] = aux;
   }
+  
 }
