@@ -33,7 +33,6 @@ class MergePassoAPasso {
 			helper[i] = numeros[i];
 		}
 		
-		
 		int i = left;
 		int j = middle + 1;
 		int k = left;
