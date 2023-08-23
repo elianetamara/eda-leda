@@ -1,26 +1,27 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
-class CountingPassoAPasso {
-  
+class CountingNegativos {
+
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
     int[] numeros = transformaLista(sc.nextLine().split(" "));
     int k = Integer.parseInt(sc.nextLine());
-    countingSort(numeros, k);
+    int neg = Integer.parseInt(sc.nextLine());
+    countingSort(numeros, k, neg);
   }
 
-  private static void countingSort(int[] numeros, int k) {
-    int[] c = new int[k+1];
-    populaC(numeros, c);
+  private static void countingSort(int[] numeros, int k, int neg) {
+    int[] c = new int[k - neg + 1];
+    populaC(numeros, c, neg);
     cumulativa(c);
     int[] b = new int[numeros.length];
-    ordenacao(b, numeros, c);
+    ordenacao(b, numeros, c, neg);
   }    
-  
 
-  private static void populaC(int[] numeros, int[] c) {
+  private static void populaC(int[] numeros, int[] c, int neg) {
     for (int i = 0; i < numeros.length; i++) {
-      c[numeros[i]] += 1; 
+      c[numeros[i] - neg] += 1;
       printArray(c);
     }
   }
@@ -33,21 +34,17 @@ class CountingPassoAPasso {
     printArray(c);
   }
 
-  private static void ordenacao(int[] b, int[] a, int[]c){
+  private static void ordenacao(int[] b, int[] a, int[]c, int neg){
     for (int i = a.length-1; i >= 0; i--) {
-      b[c[a[i]]-1] = a[i];
-      c[a[i]] -= 1;
+      b[c[a[i]-neg]-1] = a[i];
+      c[a[i]-neg] -= 1;
     }
     printArray(c);
     printArray(b);
   }
 
   private static void printArray(int[] numeros){
-    String out = "";
-    for (int i = 0; i < numeros.length; i++) {
-      out += numeros[i] + " ";
-    }
-    System.out.println(out.trim());
+    System.out.println(Arrays.toString(numeros));
   }
 
   public static int[] transformaLista(String[] lista){
@@ -58,4 +55,5 @@ class CountingPassoAPasso {
     return retorno;
   }
 
+  
 }
