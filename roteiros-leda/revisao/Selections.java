@@ -77,24 +77,28 @@ public class Selections<T extends Comparable<T>>{
     int[] numeros = new int[]{4, 9, 7, 2, 8};
     selectionDecRecursivo(numeros, 0, numeros.length-1);
     System.out.println(Arrays.toString(numeros));
+    int[] numeros2 = new int[]{4, 9, 7, 2, 8};
+    selectionDecIterativo(numeros2, 0, numeros2.length-1);
+    System.out.println("iterativo");
+    System.out.println(Arrays.toString(numeros2));
   }
 
+  
+  // [2, 4, 9, 7, 8]
   public static void selectionDecRecursivo(int[] array, int i, int n) {
-      if (array.length > 0) {
-        int menor_index = n;
-        for (int j = menor_index - 1; j >= i; j--) {
-          if (array[j] < array[menor_index]) {
-            menor_index = j;
-          }
-        }
-        int aux = array[menor_index];
-        array[menor_index] = array[i];
-        array[i] = aux;
-        if (n >= i) {
-          selectionSortRecursivo(array, i, n-1);
-        }
+    int j = n;
+    int menor = j;
+    for (int k = j - 1; k >= i; k--) {
+      if (array[k] < array[menor]) {
+        menor = k;
       }
     }
+    j--;
+    swap(array, menor, j);
+      if( j >= 1){
+      selectionDecRecursivo(array, i, j);
+    }
+  }
 
   private static void selectionDecIterativo(int[] numeros, int i, int n) {
       for (int j = n; j >= i; j--) {   
