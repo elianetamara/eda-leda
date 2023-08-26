@@ -19,12 +19,32 @@ public class CountingSort extends AbstractSorting<Integer> {
 	public void sort(Integer[] array, int leftIndex, int rightIndex) {
 		boolean checkParameters = array.length > 0 && rightIndex <= array.length-1 && leftIndex >= 0;
 		if(checkParameters){
-			int k = findBigger(array, leftIndex, rightIndex);
-			Integer[] C = frequency(array, leftIndex, rightIndex, k);
-			cumulative(C);
-			Integer[] B = sortingIntegers(array, C, rightIndex);
-			changeArray(B, array);
+			Integer[] B = countingSort(array, leftIndex, rightIndex);
+			changeArray(B, array, rightIndex, leftIndex);
 		}
+	}
+
+	private Integer[] countingSort(Integer[] array, int leftIndex, int rightIndex){
+		int k = findBigger(array, leftIndex, rightIndex);
+		Integer[] C = new Integer[k+1];
+		nullToZero(C);
+
+		for (int i = leftIndex; i <= rightIndex; i++) {
+			C[array[i]] += 1;	
+		}
+
+		for (int i = 1; i < C.length; i++) {
+			C[i] += C[i-1];
+		}
+
+		Integer[] B = new Integer[rightIndex+1];
+		nullToZero(B);
+
+		for (int i = rightIndex; i >= leftIndex; i--) {
+			B[C[array[i]]-1] = array[i];
+			C[array[i]] -= 1;
+		}
+		return B;
 	}
 
 	private static int findBigger(Integer[] array, int leftIndex, int rightIndex){
@@ -37,33 +57,17 @@ public class CountingSort extends AbstractSorting<Integer> {
 		return bigger;
 	}
 
-	private Integer[] frequency(Integer[] array, int leftIndex, int rightIndex, int k){
-		// null to zero
-		Integer[] C = new Integer[k+1];
+	private void nullToZero(Integer[] array){
+		for (int i = 0; i < array.length; i++) {
+			array[i] = 0;
+		}
+	}
+
+	private void changeArray(Integer[] B, Integer[] array, int rightIndex, int leftIndex){
+		int j = 0;
 		for (int i = leftIndex; i <= rightIndex; i++) {
-			C[array[i]] += 1;	
-		}
-		return C;
-	}
-
-	private void cumulative(Integer[] C){
-		for (int i = 1; i < C.length; i++) {
-			C[i] += C[i-1];
-		}
-	}
-
-	private Integer[] sortingIntegers(Integer[] array, Integer[] C, int rightIndex){
-		// de tras pra frente
-		Integer[] B = new Integer[rightIndex+1];
-		for (int i = 0; i < rightIndex; i++) {
-			B[C[array[i]-1]] = array[i];
-		}
-		return B;
-	}
-
-	private void changeArray(Integer[] B, Integer[] array){
-		for (int i = 0; i < B.length; i++) {
-			array[i] = B[i];
+			array[i] = B[j];
+			j++;
 		}
 	}
 
