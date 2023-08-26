@@ -1,8 +1,5 @@
 package sorting.linearSorting;
 
-import java.sql.Array;
-import java.util.Arrays;
-
 import sorting.AbstractSorting;
 
 /**
