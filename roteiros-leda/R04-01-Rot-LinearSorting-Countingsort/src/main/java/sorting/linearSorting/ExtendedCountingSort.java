@@ -10,7 +10,6 @@ import sorting.AbstractSorting;
  */
 public class ExtendedCountingSort extends AbstractSorting<Integer> {
 
-	// ajustar caso array só de negativos (tá ordenando decrescente)
 	@Override
 	public void sort(Integer[] array, int leftIndex, int rightIndex) {
 		boolean checkParameters = array.length > 0 && rightIndex <= array.length-1 && leftIndex >= 0;
