@@ -20,6 +20,38 @@ public class CountPosNeg {
     return retorno;
   }
 
+  private int findLastNegative(int[] nums, int left, int right){
+    int idxNegative = -1;
+
+    if(left < right){
+      int m = (left+right)/2;
+
+      if(nums[m] < 0 && nums[m+1] >= 0){
+        idxNegative = m;
+
+      }else if(nums[m] < 0 && nums[m+1] < 0){
+        idxNegative = findLastNegative(nums, m, right);
+      }else if(nums[m] >= 0){
+        idxNegative = findLastNegative(nums, left, m);
+      }
+    }
+
+    return idxNegative;
+  }
+
+  private int firstPositive(int[] nums, int left, int right){
+    int idxNegative = findLastNegative(nums, left, right);
+    int idxPositive = -1;
+
+    if(idxNegative < nums.length-1 && nums[idxNegative +1] > 0){
+      idxPositive = idxNegative+1;
+    }
+  }
+
+  private boolean verifyList(int[] nums){
+    return nums[0] > 0 || nums[nums.length-1] < 0 ? true : false;
+  }
+
   private int[] searchNumbers(int[] nums, int left, int right){
     int[] counts = new int[2];
 
@@ -40,6 +72,12 @@ public class CountPosNeg {
   public static void main(String[] args) {
     CountPosNeg m = new CountPosNeg();
     int[] n = new int[]{-2,-1,-1,1,2,3};
+    //int[] n1 = new int[]{-3,-2,-1,0,0,1,2};
+    int[] n1 = new int[]{-3,-2,-1,0,0,1,2};
+    int[] n2 = new int[]{5,20,66,1314};
+    //System.out.println(m.findLastNegative(n, 0, n.length-1));
+    System.out.println(m.findLastNegative(n1, 0, n1.length-1));
+    //System.out.println(m.findLastNegative(n2, 0, n2.length-1));
     System.out.println(m.maximumCount(n));
     
   }
