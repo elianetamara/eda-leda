@@ -59,26 +59,8 @@ public class CountPosNeg {
     return idxPositive;
   }
 
-  private int firstPositive(int[] nums, int left, int right){
-    int idxNegative = findLastNegative(nums, left, right);
-    int idxPositive = -1;
-
-    if(idxNegative < nums.length-1 && nums[idxNegative +1] > 0){
-      idxPositive = idxNegative+1;
-    }
-    return idxPositive;
-  }
-
   private boolean verifyList(int[] nums){
     return nums[0] > 0 || nums[nums.length-1] < 0 ? true : false;
-  }
-
-  public static void main(String[] args) {
-    CountPosNeg m = new CountPosNeg();
-    //int[] n = new int[]{-1563,-236,-114,-55,427,447,687,752,1021,1636};
-    int[] n = new int[]{-2,-1,-1,0,0,0};
-    System.out.println(m.maximumCount(n));
-    
   }
   
 }
