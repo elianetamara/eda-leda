@@ -1,4 +1,5 @@
 package sorting;
+
 // 2089 - 216 / 216  testcases passed
 
 import java.util.ArrayList;
@@ -9,7 +10,6 @@ public class TargetIdx {
   public List<Integer> targetIndices(int[] nums, int target) {
     List<Integer> num = tranferList(nums);
     quickSort(num, 0, num.size()-1);
-
     List<Integer> idx = binarySearch(num, target);
     return idx;
   }
@@ -81,6 +81,7 @@ public class TargetIdx {
     insertionSort(array, leftIndex, rightIndex);
     return pivots;
   }
+
 
   private void insertionSort(List<Integer> array, int leftIndex, int rightIndex) {
     for (int i = leftIndex + 1; i < rightIndex + 1; i++) {
