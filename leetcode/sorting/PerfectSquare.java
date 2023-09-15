@@ -2,7 +2,7 @@ package sorting;
 
 // 367 /71 tests passed
 
-// ajuste: busca binaria com double (+- R06)
+// ajuste: busca binaria com double (+- R06 - leda)
 
 public class PerfectSquare {
   public boolean isPerfectSquare(int num) {
