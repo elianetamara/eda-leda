@@ -6,7 +6,7 @@
 
 Repositório com os roteiros desenvolvidos ao longo da disciplina
 
-## 🔗 Links
+## 💡 Roteiros
 
 Roteiro | Assunto | Código
 :--: | :--: | :--:
@@ -20,3 +20,7 @@ R05  | Cálculo de estatística de ordem e floor (BinarySearch, QuickSelect) | [
 R06  | Busca binária (prova de reposição anterior) | [Link](R06-01-Rot-BinarySearch-Raiz)
 R07  | Tipos abstratos de dados (Stack, Queue) | [Link](R07-01-Rot-TAD-Linear)
 R08  | Lista encadeada (LinkedList) | [Link](R08-01-Rot-Linked-List)
+
+## 📑 Correções
+
+Caso queira ver os comentários dos respectivos roteiros, os mesmos se encontram [aqui](COMMENTS.md)
