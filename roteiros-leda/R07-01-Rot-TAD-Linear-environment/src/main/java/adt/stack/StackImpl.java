@@ -13,9 +13,11 @@ public class StackImpl<T> implements Stack<T> {
 
 	@Override
 	public T top() {
-		if(isEmpty()) return null; 
-		
-		return array[top];
+		T out = null;
+		if (!isEmpty())
+			out = array[top];
+
+		return out;
 	}
 
 	@Override
@@ -25,22 +27,23 @@ public class StackImpl<T> implements Stack<T> {
 
 	@Override
 	public boolean isFull() {
-		return top == array.length-1;
+		return top == array.length - 1;
 	}
 
 	@Override
 	public void push(T element) throws StackOverflowException {
 		if (isFull()) {
 			throw new StackOverflowException();
-		}else if(element != null){
+		} else if (element != null) {
 			array[++top] = element;
-		}  
+		}
 	}
 
 	@Override
 	public T pop() throws StackUnderflowException {
-		if(isEmpty()) throw new StackUnderflowException();
-		
+		if (isEmpty())
+			throw new StackUnderflowException();
+
 		return array[top--];
 	}
 

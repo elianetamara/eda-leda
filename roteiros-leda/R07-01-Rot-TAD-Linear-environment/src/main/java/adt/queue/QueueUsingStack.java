@@ -2,6 +2,8 @@ package adt.queue;
 
 import adt.stack.Stack;
 import adt.stack.StackImpl;
+import adt.stack.StackOverflowException;
+import adt.stack.StackUnderflowException;
 
 public class QueueUsingStack<T> implements Queue<T> {
 
@@ -15,32 +17,70 @@ public class QueueUsingStack<T> implements Queue<T> {
 
 	@Override
 	public void enqueue(T element) throws QueueOverflowException {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Not implemented yet!");
+		if (isFull())
+			throw new QueueOverflowException();
+
+		if (element != null) {
+			try {
+				stack1.push(element);
+			} catch (StackOverflowException e) {
+				e.printStackTrace();
+			}
+		}
 	}
 
 	@Override
 	public T dequeue() throws QueueUnderflowException {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Not implemented yet!");
+		if (isEmpty())
+			throw new QueueUnderflowException();
+
+		T out = null;
+
+		try {
+			switchStacks();
+			out = stack2.pop();
+			switchStacks();
+		} catch (StackOverflowException | StackUnderflowException e) {
+			e.printStackTrace();
+		}
+
+		return out;
 	}
 
 	@Override
 	public T head() {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Not implemented yet!");
+		T out = null;
+
+		try {
+			switchStacks();
+			out = stack2.top();
+			switchStacks();
+		} catch (StackOverflowException | StackUnderflowException e) {
+			e.printStackTrace();
+		}
+		return out;
 	}
 
 	@Override
 	public boolean isEmpty() {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Not implemented yet!");
+		return stack1.isEmpty();
 	}
 
 	@Override
 	public boolean isFull() {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Not implemented yet!");
+		return stack1.isFull();
+	}
+
+	private void switchStacks() throws StackOverflowException, StackUnderflowException {
+		if (stack2.isEmpty()) {
+			while (!stack1.isEmpty()) {
+				stack2.push(stack1.pop());
+			}
+		} else {
+			while (!stack2.isEmpty()) {
+				stack1.push(stack2.pop());
+			}
+		}
 	}
 
 }
