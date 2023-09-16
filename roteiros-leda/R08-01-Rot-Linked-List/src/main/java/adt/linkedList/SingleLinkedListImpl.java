@@ -10,13 +10,13 @@ public class SingleLinkedListImpl<T> implements LinkedList<T> {
 
 	@Override
 	public boolean isEmpty() {
-		return getHead().isNIL();
+		return this.getHead().isNIL();
 	}
 
 	@Override
 	public int size() {
 		int size = 0;
-		SingleLinkedListNode<T> node = getHead();
+		SingleLinkedListNode<T> node = this.getHead();
 
 		while (!node.isNIL()) {
 			size++;
@@ -27,7 +27,7 @@ public class SingleLinkedListImpl<T> implements LinkedList<T> {
 
 	@Override
 	public T search(T element) {
-		SingleLinkedListNode<T> node = getHead();
+		SingleLinkedListNode<T> node = this.getHead();
 
 		if (element != null) {
 			while (!node.isNIL() && node.getData() != element) {
@@ -42,9 +42,9 @@ public class SingleLinkedListImpl<T> implements LinkedList<T> {
 	@Override
 	public void insert(T element) {
 		if (element != null) {
-			SingleLinkedListNode<T> node = getHead();
+			SingleLinkedListNode<T> node = this.getHead();
 			if (node.isNIL()) {
-				setHead(new SingleLinkedListNode<T>(element, node));
+				this.setHead(new SingleLinkedListNode<T>(element, node));
 			} else {
 				while (!node.isNIL()) {
 					node = node.getNext();
@@ -58,9 +58,9 @@ public class SingleLinkedListImpl<T> implements LinkedList<T> {
 	@Override
 	public void remove(T element) {
 		if (element != null && !this.isEmpty()) {
-			SingleLinkedListNode<T> node = getHead();
+			SingleLinkedListNode<T> node = this.getHead();
 			if (node.getData().equals(element)) {
-				setHead(node.getNext());
+				this.setHead(node.getNext());
 			} else {
 				while (!node.isNIL() && !node.getData().equals(element)) {
 					node = node.getNext();
@@ -78,7 +78,7 @@ public class SingleLinkedListImpl<T> implements LinkedList<T> {
 	public T[] toArray() {
 		T[] array = (T[]) new Object[size()];
 		int count = 0;
-		SingleLinkedListNode<T> node = getHead();
+		SingleLinkedListNode<T> node = this.getHead();
 
 		while (!node.isNIL()) {
 			array[count++] = node.getData();

@@ -9,17 +9,18 @@ public class RecursiveSingleLinkedListImpl<T> implements LinkedList<T> {
 
 	}
 
-
 	@Override
 	public boolean isEmpty() {
-		return getData() == null;
+		return this.getData() == null;
 	}
 
 	@Override
 	public int size() {
 		int size;
-		if(isEmpty()) size = 0;
-		else size = 1 + getNext().size();
+		if (this.isEmpty())
+			size = 0;
+		else
+			size = 1 + this.getNext().size();
 
 		return size;
 	}
@@ -27,11 +28,11 @@ public class RecursiveSingleLinkedListImpl<T> implements LinkedList<T> {
 	@Override
 	public T search(T element) {
 		T out = null;
-		if(element != null && !isEmpty()){
-			if(getData().equals(element)){
-				out = getData();
-			}else{
-				out = getNext().search(element);
+		if (element != null && !this.isEmpty()) {
+			if (this.getData().equals(element)) {
+				out = this.getData();
+			} else {
+				out = this.getNext().search(element);
 			}
 		}
 		return out;
@@ -39,24 +40,24 @@ public class RecursiveSingleLinkedListImpl<T> implements LinkedList<T> {
 
 	@Override
 	public void insert(T element) {
-		if(element != null){
-			if(isEmpty()){
-				setData(element);
-				setNext(new RecursiveSingleLinkedListImpl<T>());
-			}else{
-				getNext().insert(element);
+		if (element != null) {
+			if (this.isEmpty()) {
+				this.setData(element);
+				this.setNext(new RecursiveSingleLinkedListImpl<T>());
+			} else {
+				this.getNext().insert(element);
 			}
 		}
 	}
 
 	@Override
 	public void remove(T element) {
-		if(element != null && !isEmpty()){
-			if(getData().equals(element)){
-				setData(getNext().getData());
-				setNext(getNext().getNext());
-			}else{
-				getNext().remove(element);
+		if (element != null && !this.isEmpty()) {
+			if (getData().equals(element)) {
+				this.setData(this.getNext().getData());
+				this.setNext(this.getNext().getNext());
+			} else {
+				this.getNext().remove(element);
 			}
 		}
 	}
@@ -70,8 +71,8 @@ public class RecursiveSingleLinkedListImpl<T> implements LinkedList<T> {
 
 	private void toArray(T[] array, int i) {
 		if (!this.isEmpty()) {
-			array[i] = getData();
-			getNext().toArray(array, i + 1);
+			array[i] = this.getData();
+			this.getNext().toArray(array, i + 1);
 		}
 	}
 
