@@ -35,7 +35,7 @@ public class StackDoubleLinkedListImpl<T> implements Stack<T> {
 
 	@Override
 	public T top() {
-		return ((DoubleLinkedListImpl<T>) top).getHead().getData();
+		return ((DoubleLinkedListImpl<T>) this.top).getHead().getData();
 	}
 
 	@Override
