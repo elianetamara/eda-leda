@@ -20,6 +20,7 @@ R05  | Cálculo de estatística de ordem e floor (BinarySearch, QuickSelect) | [
 R06  | Busca binária (prova de reposição anterior) | [Link](R06-01-Rot-BinarySearch-Raiz)
 R07  | Tipos abstratos de dados (Stack, Queue) | [Link](R07-01-Rot-TAD-Linear)
 R08  | Lista encadeada (LinkedList) | [Link](R08-01-Rot-Linked-List)
+R09  | Uso de lista encadeada (prova anterior) | [Link](R09-01-Rot-LinkedList-RemoveDuplicates)
 
 ## 📑 Correções
 
