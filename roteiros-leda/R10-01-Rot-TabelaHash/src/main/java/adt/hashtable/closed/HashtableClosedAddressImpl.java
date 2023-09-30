@@ -100,14 +100,8 @@ public class HashtableClosedAddressImpl<T> extends
 	@Override
 	public T search(T element) {
 		T out = null;
-		int hashCode = getHashFunc(element);
-		int idxElement = indexOf(element);
-
-		if (idxElement != -1) {
-			if (((LinkedList<T>) this.table[hashCode]).contains(element)) {
-				out = element;
-			}
-		}
+		if (indexOf(element) != -1)
+			out = element;
 		return out;
 	}
 
