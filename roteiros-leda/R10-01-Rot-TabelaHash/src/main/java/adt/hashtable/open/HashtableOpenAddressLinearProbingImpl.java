@@ -43,13 +43,13 @@ public class HashtableOpenAddressLinearProbingImpl<T extends Storable> extends
 	@Override
 	public void remove(T element) {
 
-		if (element != null) {
+		if (element != null && !this.isEmpty()) {
 			int prob = 0;
 
 			while (prob < table.length) {
 				int hashCode = getHashFunc(element, prob);
 
-				if (table[hashCode] != null && table[hashCode].equals(element)) {
+				if (table[hashCode] != null) {
 					if (table[hashCode].equals(element)) {
 						table[hashCode] = deletedElement;
 						elements -= 1;
