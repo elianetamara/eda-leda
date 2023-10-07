@@ -9,5 +9,6 @@ R04  | Ordenação em tempo linear (CountingSort) | 54 | 54 | 0 | 0 | Sem coment
 R05  | Cálculo de estatística de ordem e floor (BinarySearch, QuickSelect) | 40 | 28 | 7 | 5 | Implementação confusa e errada do floor e quick com o uso de muitos return em um mesmo método.
 R06  | Busca binária (prova de reposição anterior) | 8 | 8 | 0 | 0 | metodos nao precisavam ser estáticos. Metodo potencia só precisava de dois parametros. A condicao (resultPotencia == numero) nao precisava. Era so verificar se tava dentro da margem de erro.
 R07  | Tipos abstratos de dados (Stack, Queue)  | 40 | 35 | 3 | 2 | Classe CircularQueue: No dequeue faltou decrementar os elements quando (head == tail). Classe QueueImpl o shiftLeft deveria ir até o i < tail.
-R08  | Lista encadeada (LinkedList)  | 50 | 50 | 0 | 0 |  
-R09  | Uso de lista encadeada (prova anterior)  | 12 | 12 | 0 | 0 | A condicao !nodeAux.getNext().isNIL() nao deveria fazer parte do while mais interno. E o nodeAux deveria ter começado com node.next. 
+R08  | Lista encadeada (LinkedList)  | 50 | 50 | 0 | 0 | Excelente implementação . Parabéns :)
+R09  | Uso de lista encadeada (prova anterior)  | 12 | 12 | 0 | 0 | A condicao !nodeAux.getNext().isNIL() nao deveria fazer parte do while mais interno. E o nodeAux deveria ter começado com node.next.
+R10  | Tabelas Hash | 24 | 24 | 0 | 0 |  

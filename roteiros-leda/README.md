@@ -21,6 +21,8 @@ R06  | Busca binária (prova de reposição anterior) | [Link](R06-01-Rot-Binary
 R07  | Tipos abstratos de dados (Stack, Queue) | [Link](R07-01-Rot-TAD-Linear)
 R08  | Lista encadeada (LinkedList) | [Link](R08-01-Rot-Linked-List)
 R09  | Uso de lista encadeada (prova anterior) | [Link](R09-01-Rot-LinkedList-RemoveDuplicates)
+R10  | Tabelas Hash | [Link](R10-01-Rot-TabelaHash)
+R11  | Árvore Binária da Busca | [Link](R11-01-Rot-BST)
 
 ## 📑 Correções
 
