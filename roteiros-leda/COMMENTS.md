@@ -11,4 +11,4 @@ R06  | Busca binária (prova de reposição anterior) | 8 | 8 | 0 | 0 | metodos 
 R07  | Tipos abstratos de dados (Stack, Queue)  | 40 | 35 | 3 | 2 | Classe CircularQueue: No dequeue faltou decrementar os elements quando (head == tail). Classe QueueImpl o shiftLeft deveria ir até o i < tail.
 R08  | Lista encadeada (LinkedList)  | 50 | 50 | 0 | 0 | Excelente implementação . Parabéns :)
 R09  | Uso de lista encadeada (prova anterior)  | 12 | 12 | 0 | 0 | A condicao !nodeAux.getNext().isNIL() nao deveria fazer parte do while mais interno. E o nodeAux deveria ter começado com node.next.
-R10  | Tabelas Hash | 24 | 24 | 0 | 0 |  
+R10  | Tabelas Hash | 24 | 24 | 0 | 0 |  Uso desnecessário de break, má prática quanto ao uso abusivo.

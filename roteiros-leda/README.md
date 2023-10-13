@@ -23,6 +23,7 @@ R08  | Lista encadeada (LinkedList) | [Link](R08-01-Rot-Linked-List)
 R09  | Uso de lista encadeada (prova anterior) | [Link](R09-01-Rot-LinkedList-RemoveDuplicates)
 R10  | Tabelas Hash | [Link](R10-01-Rot-TabelaHash)
 R11  | Árvore Binária da Busca | [Link](R11-01-Rot-BST)
+R12  | Heap binária | [Link](R12-01-Rot-HeapBinaria)
 
 ## 📑 Correções
 
