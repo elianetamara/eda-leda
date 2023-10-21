@@ -1,5 +1,6 @@
 package adt.avltree;
 
+import adt.bst.BSTNode;
 import adt.bst.BSTVerifierImpl;
 
 /**
@@ -24,11 +25,21 @@ public class AVLTreeVerifierImpl<T extends Comparable<T>> extends BSTVerifierImp
 
 	@Override
 	public boolean isAVLTree() {
+		return isBST() && (getAVLTree().isEmpty() || isAVLTree(getAVLTree().getRoot()));
+	}
 
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Not implemented yet!");
+	private boolean isAVLTree(BSTNode<T> node) {
+		boolean isAVLTree = true;
 
-		// return isBST() && ...
+		if (!node.isEmpty()) {
+			if (Math.abs(getAVLTree().calculateBalance(node)) <= 1) {
+				isAVLTree = isAVLTree((BSTNode<T>) node.getLeft()) && isAVLTree((BSTNode<T>) node.getRight());
+			} else {
+				isAVLTree = false;
+			}
+		}
+
+		return isAVLTree;
 	}
 
 }
