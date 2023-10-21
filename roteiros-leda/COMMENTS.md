@@ -12,3 +12,5 @@ R07  | Tipos abstratos de dados (Stack, Queue)  | 40 | 35 | 3 | 2 | Classe Circu
 R08  | Lista encadeada (LinkedList)  | 50 | 50 | 0 | 0 | Excelente implementação . Parabéns :)
 R09  | Uso de lista encadeada (prova anterior)  | 12 | 12 | 0 | 0 | A condicao !nodeAux.getNext().isNIL() nao deveria fazer parte do while mais interno. E o nodeAux deveria ter começado com node.next.
 R10  | Tabelas Hash | 24 | 24 | 0 | 0 |  Uso desnecessário de break, má prática quanto ao uso abusivo.
+R11  | Árvore Binária da Busca | 47 | 45 | 0 | 2 |  
+R12  | Heap binária | 54 | 54 | 0 | 0 |  
