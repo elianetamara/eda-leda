@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 
 import adt.bst.BSTNode;
+import adt.bt.Util;
 
 public class AVLCountAndFillImpl<T extends Comparable<T>> extends
 		AVLTreeImpl<T> implements AVLCountAndFill<T> {
@@ -35,6 +36,36 @@ public class AVLCountAndFillImpl<T extends Comparable<T>> extends
 	@Override
 	public int RLcount() {
 		return RLcounter;
+	}
+
+	@Override
+	protected void rebalance(BSTNode<T> node) {
+		int balance = calculateBalance(node);
+		BSTNode<T> nodeAux = null;
+
+		if (Math.abs(balance) > 1) {
+			if (balance > 1) {
+				if (calculateBalance((BSTNode<T>) node.getLeft()) >= 0) {
+					nodeAux = Util.rightRotation(node);
+					this.LLcounter++;
+				} else {
+					nodeAux = Util.doubleRightRotation(node);
+					this.LRcounter++;
+				}
+			} else {
+				if (calculateBalance((BSTNode<T>) node.getRight()) <= 0) {
+					nodeAux = Util.leftRotation(node);
+					this.RRcounter++;
+				} else {
+					nodeAux = Util.doubleLeftRotation(node);
+					this.RLcounter++;
+				}
+			}
+		}
+
+		if (getRoot().equals(node) && nodeAux != null) {
+			this.root = nodeAux;
+		}
 	}
 
 	@Override

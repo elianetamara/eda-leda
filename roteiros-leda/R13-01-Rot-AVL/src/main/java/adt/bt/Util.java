@@ -4,9 +4,9 @@ import adt.bst.BSTNode;
 
 public class Util {
 
-
 	/**
 	 * A rotacao a esquerda em node deve subir e retornar seu filho a direita
+	 * 
 	 * @param node
 	 * @return - noh que se tornou a nova raiz
 	 */
@@ -31,8 +31,14 @@ public class Util {
 		return root;
 	}
 
+	public static <T extends Comparable<T>> BSTNode<T> doubleLeftRotation(BSTNode<T> node) {
+		rightRotation((BSTNode<T>) node.getRight());
+		return leftRotation(node);
+	}
+
 	/**
 	 * A rotacao a direita em node deve subir e retornar seu filho a esquerda
+	 * 
 	 * @param node
 	 * @return noh que se tornou a nova raiz
 	 */
@@ -55,6 +61,11 @@ public class Util {
 		}
 
 		return root;
+	}
+
+	public static <T extends Comparable<T>> BSTNode<T> doubleRightRotation(BSTNode<T> node) {
+		leftRotation((BSTNode<T>) node.getLeft());
+		return rightRotation(node);
 	}
 
 	public static <T extends Comparable<T>> T[] makeArrayOfComparable(int size) {
