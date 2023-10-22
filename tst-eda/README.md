@@ -40,4 +40,9 @@ Repositório com questões resolvidas do tst-eda
 
 <h3 align="left">Terceiro Estágio</h3>
 
-- [Predecessor BST]()
+- [Predecessor BST](terceiro-estagio/PredecessorBST.java)
+- [BFS pela direita](terceiro-estagio/BFSFromRight.java)
+- [Conta nós internos pela BST](terceiro-estagio/ContaNosInternos.java)
+- [Soma folhas BST](terceiro-estagio/SomaFolhas.java)
+- [Balance AVL](terceiro-estagio/BalanceAVL.java)
+- [Rotação AVL](terceiro-estagio/RotacaoAVL.java)
