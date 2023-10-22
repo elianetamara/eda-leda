@@ -8,9 +8,7 @@ Repositório com questões resolvidas do tst-eda
 
 ## 💡 Questões
 
-<h3 align="left">
-  <p> Primeiro Estágio </p>
-</h3>
+<h3 align="left">Primeiro Estágio</h3>
 
 - [Counting sort passo a passo (para números negativos)](primeiro-estagio/CountingNegativos.java)
 - [Counting sort passo a passo](primeiro-estagio/CountingPassoAPasso.java)
@@ -36,14 +34,10 @@ Repositório com questões resolvidas do tst-eda
 - [Vetor Circular](primeiro-estagio/VetorCircular.java)
 - [Warmup](primeiro-estagio/Warmup.java)
 
-<h3 align="left">
-  <p> Segundo Estágio </p>
-</h3>
+<h3 align="left">Segundo Estágio</h3>
 
 - [Filtra Linked List]()
 
-<h3 align="left">
-  <p> Terceiro Estágio </p>
-</h3>
+<h3 align="left">Terceiro Estágio</h3>
 
 - [Predecessor BST]()
