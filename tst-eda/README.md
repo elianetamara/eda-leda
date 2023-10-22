@@ -8,6 +8,10 @@ Repositório com questões resolvidas do tst-eda
 
 ## 💡 Questões
 
+<h3 align="center">
+  <p> Primeiro Estágio </p>
+</h3>
+
 - [Counting sort passo a passo (para números negativos)](primeiro-estagio/CountingNegativos.java)
 - [Counting sort passo a passo](primeiro-estagio/CountingPassoAPasso.java)
 - [Dois Somam](primeiro-estagio/DoisSomam.java)
@@ -31,3 +35,15 @@ Repositório com questões resolvidas do tst-eda
 - [Verifica Duplicados](primeiro-estagio/VerificaDuplicados.java)
 - [Vetor Circular](primeiro-estagio/VetorCircular.java)
 - [Warmup](primeiro-estagio/Warmup.java)
+
+<h3 align="center">
+  <p> Segundo Estágio </p>
+</h3>
+
+- [Filtra Linked List]()
+
+<h3 align="center">
+  <p> Terceiro Estágio </p>
+</h3>
+
+- [Predecessor BST]()
