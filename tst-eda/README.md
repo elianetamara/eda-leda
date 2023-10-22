@@ -8,7 +8,7 @@ Repositório com questões resolvidas do tst-eda
 
 ## 💡 Questões
 
-<h3 align="center">
+<h3 align="left">
   <p> Primeiro Estágio </p>
 </h3>
 
@@ -36,13 +36,13 @@ Repositório com questões resolvidas do tst-eda
 - [Vetor Circular](primeiro-estagio/VetorCircular.java)
 - [Warmup](primeiro-estagio/Warmup.java)
 
-<h3 align="center">
+<h3 align="left">
   <p> Segundo Estágio </p>
 </h3>
 
 - [Filtra Linked List]()
 
-<h3 align="center">
+<h3 align="left">
   <p> Terceiro Estágio </p>
 </h3>
 
