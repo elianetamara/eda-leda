@@ -1,15 +1,13 @@
-import java.util.ArrayList;
 import java.util.Scanner;
 
-// fail: ....F
+// success: ......
 
-class PredecessorBST {
+class ContaNosInternos {
 
   static class BST {
 
     private Node root;
     private int size;
-    private ArrayList<Integer> predPath;
 
     public boolean isEmpty() {
       return this.root == null;
@@ -49,52 +47,6 @@ class PredecessorBST {
 
     }
 
-    public Node max() {
-      if (isEmpty())
-        return null;
-
-      Node node = this.root;
-      while (node.right != null)
-        node = node.right;
-
-      return node;
-    }
-
-    private Node max(Node node) {
-      if (node.right == null)
-        return node;
-      else {
-        predPath.add(node.right.value);
-        return max(node.right);
-      }
-
-    }
-
-    public Node predecessor(Node node) {
-      predPath = new ArrayList<>();
-      if (node == null)
-        return null;
-
-      predPath.add(node.value);
-
-      if (node.left != null) {
-        predPath.add(node.left.value);
-        return max(node.left);
-      } else {
-        Node aux = node.parent;
-
-        if (aux.value < node.value)
-          predPath.add(aux.value);
-
-        while (aux != null && aux.value > node.value) {
-          predPath.add(aux.value);
-          aux = aux.parent;
-        }
-
-        return aux;
-      }
-    }
-
     public Node search(int element) {
 
       Node aux = this.root;
@@ -110,6 +62,24 @@ class PredecessorBST {
 
       return null;
     }
+
+    public Integer countInternalNodes() {
+      return countInternalNodes(this.root, 0);
+    }
+
+    private Integer countInternalNodes(Node node, int i) {
+      if (!node.isLeaf()) {
+        i++;
+        if (node.hasOnlyLeftChild()) {
+          i += countInternalNodes(node.left, 0);
+        } else if (node.hasOnlyRightChild()) {
+          i += countInternalNodes(node.right, 0);
+        } else {
+          i += countInternalNodes(node.left, 0) + countInternalNodes(node.right, 0);
+        }
+      }
+      return i;
+    }
   }
 
   static class Node {
@@ -123,21 +93,30 @@ class PredecessorBST {
       this.value = v;
     }
 
+    public boolean isLeaf() {
+      return this.left == null && this.right == null;
+    }
+
+    public boolean hasOnlyLeftChild() {
+      return (this.left != null && this.right == null);
+    }
+
+    public boolean hasOnlyRightChild() {
+      return (this.left == null && this.right != null);
+    }
+
   }
 
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
     String[] y = sc.nextLine().split(" ");
-    int x = Integer.parseInt(sc.nextLine());
     BST bst = new BST();
 
     for (int i = 0; i < y.length; i++) {
       bst.add(Integer.parseInt(y[i]));
     }
 
-    Node node = bst.search(x);
-    bst.predecessor(node);
-    System.out.println(bst.predPath.toString());
+    System.out.println(bst.countInternalNodes());
   }
 
 }
