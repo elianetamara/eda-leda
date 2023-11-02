@@ -36,7 +36,10 @@ Repositório com questões resolvidas do tst-eda
 
 <h3 align="left">Segundo Estágio</h3>
 
-- [Filtra Linked List]()
+- [Filtra Linked List](segundo-estagio/FiltraLL.java)
+- [Remove Linked List](segundo-estagio/RemoveIdxLL.java)
+- [Trim Linked List](segundo-estagio/TrimLL.java)
+- [Troca Vizinhos Linked List](segundo-estagio/TrocaVizinhosLL.java)
 
 <h3 align="left">Terceiro Estágio</h3>
 
@@ -46,3 +49,5 @@ Repositório com questões resolvidas do tst-eda
 - [Soma folhas BST](terceiro-estagio/SomaFolhas.java)
 - [Balance AVL](terceiro-estagio/BalanceAVL.java)
 - [Rotação AVL](terceiro-estagio/RotacaoAVL.java)
+- [Max Heap](terceiro-estagio/MaxHeap.java)
+- [Build Heap](terceiro-estagio/BuildHeap.java)
