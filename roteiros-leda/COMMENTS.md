@@ -12,5 +12,7 @@ R07  | Tipos abstratos de dados (Stack, Queue)  | 40 | 35 | 3 | 2 | Classe Circu
 R08  | Lista encadeada (LinkedList)  | 50 | 50 | 0 | 0 | Excelente implementação . Parabéns :)
 R09  | Uso de lista encadeada (prova anterior)  | 12 | 12 | 0 | 0 | A condicao !nodeAux.getNext().isNIL() nao deveria fazer parte do while mais interno. E o nodeAux deveria ter começado com node.next.
 R10  | Tabelas Hash | 24 | 24 | 0 | 0 |  Uso desnecessário de break, má prática quanto ao uso abusivo.
-R11  | Árvore Binária da Busca | 47 | 45 | 0 | 2 |  
-R12  | Heap binária | 54 | 54 | 0 | 0 |  
+R11  | Árvore Binária da Busca | 47 | 45 | 0 | 2 |Ótima implementação, parabéns! BSTImpl - predecessor usa o maximum e não o minimum. Só teve essa confusão. De resto, a implementação está ótima. SimpleBSTManipulationImp e FloorCeilBSTImpl bem implementadas.
+R12  | Heap binária | 54 | 54 | 0 | 0 |Implementação excelente.
+R13  | AVL | 47 | 44 | 0 | 3 |  
+R14  | Heap (prova anterior) | 5 | 5 | 0 | 0 | Nao funciona quando a quantidade de ingressos a ser vendida é maior do que a quantidade de assentos disponiveis.
