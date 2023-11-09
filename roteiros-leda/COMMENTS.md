@@ -14,5 +14,5 @@ R09  | Uso de lista encadeada (prova anterior)  | 12 | 12 | 0 | 0 | A condicao !
 R10  | Tabelas Hash | 24 | 24 | 0 | 0 |  Uso desnecessário de break, má prática quanto ao uso abusivo.
 R11  | Árvore Binária da Busca | 47 | 45 | 0 | 2 |Ótima implementação, parabéns! BSTImpl - predecessor usa o maximum e não o minimum. Só teve essa confusão. De resto, a implementação está ótima. SimpleBSTManipulationImp e FloorCeilBSTImpl bem implementadas.
 R12  | Heap binária | 54 | 54 | 0 | 0 |Implementação excelente.
-R13  | AVL | 47 | 44 | 0 | 3 |  
+R13  | AVL | 47 | 44 | 0 | 3 |  Boa implementação. Método para verificar se a árvore viola as propriedades de AVL falha em alguns casos.
 R14  | Heap (prova anterior) | 5 | 5 | 0 | 0 | Nao funciona quando a quantidade de ingressos a ser vendida é maior do que a quantidade de assentos disponiveis.
